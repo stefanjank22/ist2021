@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE proizvodi SYSTEM "proizvodi.dtd">
 <proizvodi>
   <proizvod>
-    <kategorija>Laptop</kategorija>
-    <cena cena="rsd">90000</cena>
-    <teksOglasa>Neki tekst ogalsa</teksOglasa>
+    <kategorija naziv="laptop"></kategorija>
+    <cena valuta="rsd">90000</cena>
+    <tekstOglasa>Neki tekst ogalsa</tekstOglasa>
     <oznake>
       <oznaka>akcija</oznaka>
     </oznake>
