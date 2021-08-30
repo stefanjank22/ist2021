@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<proizvodi>
+  <proizvod>
+    <kategorija>Laptop</kategorija>
+    <cena cena="rsd">90000</cena>
+    <teksOglasa>Neki tekst ogalsa</teksOglasa>
+    <oznake>
+      <oznaka>akcija</oznaka>
+    </oznake>
+    <akcije>
+      <akcija cena="80000" datumIsteka="2021-09-01"></akcija>
+    </akcije>
+  </proizvod>
+</proizvodi>
