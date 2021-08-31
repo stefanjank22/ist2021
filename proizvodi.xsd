@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="proizvodi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="proizvod" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="proizvod">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="kategorija" />
+        <xs:element ref="cena" />
+        <xs:element ref="tekstOglasa" />
+        <xs:element ref="oznake" />
+        <xs:element ref="akcije" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="kategorija">
+    <xs:complexType>
+      <xs:attribute name="naziv" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="pc" />
+            <xs:enumeration value="laptop" />
+            <xs:enumeration value="mobilni" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cena">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:positiveInteger">
+          <xs:attribute default="rsd" name="valuta">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="rsd" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="tekstOglasa">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="10"></xs:minLength>
+        <xs:maxLength value="180"></xs:maxLength>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="oznake">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="5" ref="oznaka" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="oznaka" type="xs:string" />
+  <xs:element name="akcije">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="akcija" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="akcija">
+    <xs:complexType>
+      <xs:attribute name="cena" type="xs:string" use="required" />
+      <xs:attribute name="datumIsteka" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE proizvodi SYSTEM "proizvodi.dtd">
-<proizvodi>
+<proizvodi
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="proizvodi.xsd">
   <proizvod>
     <kategorija naziv="laptop"></kategorija>
     <cena valuta="rsd">90000</cena>
