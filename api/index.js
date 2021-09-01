@@ -7,10 +7,20 @@ app.listen(3000,()=>{
 });
 
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.use(express.json());//izuciti
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers','*');
+    next();
+  });
 
 app.get('/sviProizvodi',(req,res)=>{
     res.send(upravljanjeProizvodima.sviVidljiviProizvodi());
+});
+
+app.get('/getProizvodById/:id',(req,res) =>{
+    let id=req.params["id"];
+    res.send( upravljanjeProizvodima.getProizvodById(id));
 });
 
 app.post('/dodajProizvod',(req,res)=>{
@@ -20,7 +30,7 @@ app.post('/dodajProizvod',(req,res)=>{
 
 app.get('/izbrisiProizvod/:id',(req,res)=>{
     upravljanjeProizvodima.izbrisiProizvod(req.params['id']);
-    res.send(upravljanjeProizvodima.sviVidljiviProizvodi());
+    res.end();
 });
 
 app.post('/izmeniProizvod',(req,res)=>{
@@ -29,6 +39,6 @@ app.post('/izmeniProizvod',(req,res)=>{
 });
 
 app.get('/pretraga',(req,res) =>{
-    console.log(req.query.pretraga);
-    res.send( kontrolaProizvoda.pretraziProizvode(req.query.pretraga));
+    res.send( upravljanjeProizvodima.pretraziProizvode(req.query.pretraga));
+    res.end("200");
 });

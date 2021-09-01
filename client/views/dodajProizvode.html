@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="/prikazProizvoda">Prikazi proizvode</a>
+        <a href="/dodajProizvode">Dodaj proizvode</a>
+        <a href="/izmeniProizvodeStr">Izmeni proizvode</a>
+    </nav>
+    <br><br><br>
+    <form method="POST" action="/dodajNoviProizvod">
+       
+         Naziv proizvoda:<br><br>  
+        <input type="text" name="naziv"><br><br>
+
+         Kategorija proizvoda:<br> <br>  
+        <select name="kategorija">
+            <option>Laptop racunari</option>
+            <option>Mobilni uredjaji</option>
+            <option>Konzole</option>
+            <option>Komponente</option>
+        </select><br><br>
+
+         Cena proizvoda:<br><br>   
+        <input type="number" name="cena"><br><br>
+
+        Opis proizvoda:<br><br>   
+        <textarea type="text" rows="6" cols="30" name="opis"></textarea><br><br>
+
+        URL fotografije:<br><br>  
+        <input type="text" name="slika"><br><br>
+
+        Unesite oznaku proizvoda:<br><br>   
+        <input type="text" name="tag"><br><br>
+        
+        <input type="submit" value="Dodaj proizvod">
+    </form>
+</body>
+</html>

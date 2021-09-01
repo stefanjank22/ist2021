@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #prikazProizvoda{
+            margin: 40px 0px;
+            display: flex;
+            
+        }
+        #lista{
+            flex-grow: 1;
+        }
+
+        #izmena{
+            flex-grow: 2;
+            border-left: 1px solid black;
+            margin: 10px 30px;
+            padding: 30px
+        }
+        .proizvod{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid black;
+        }
+        .proizvod img{
+            width: 47px;
+            height: auto;
+        }
+        .proizvod_name,
+        .proizvod_price,
+        .proizvod_radio{
+            width: 25%;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/prikazProizvoda">Prikazi proizvode</a>
+        <a href="/dodajProizvode">Dodaj proizvode</a>
+        <a href="/izmeniProizvodeStr">Izmeni proizvode</a>
+    </nav>
+
+    <div id="prikazProizvoda">
+        <div id="lista">
+            ${data}
+        </div>
+        <div id="izmena">
+
+            <form action="/izmeniProizvod" method="post">
+                ID proizvoda:<br><br>  
+                <input type="number" name="id" id="izmena_id" readonly><br><br>
+        
+                Naziv proizvoda:<br><br>  
+                <input type="text" name="naziv" id="izmena_naziv"><br><br>
+        
+                Kategorija proizvoda:<br> <br>  
+                <select name="kategorija" id="izmena_kategorija">
+                    <option value="Laptop racunari">Laptop racunari</option>
+                    <option value="Mobilni uredjaji">Mobilni uredjaji</option>
+                    <option value="Konzole">Konzole</option>
+                    <option value="Komponente">Komponente</option>
+                </select><br><br>
+        
+                Cena proizvoda:<br><br>   
+                <input type="number" name="cena" id="izmena_cena"><br><br>
+        
+                Opis proizvoda:<br><br>   
+                <textarea type="text" rows="6" cols="30" name="opis" id="izmena_opis"></textarea><br><br>
+        
+                URL fotografije:<br><br>  
+                <input type="text" name="slika" id="izmena_slika"><br><br>
+        
+                Unesite oznaku proizvoda:<br><br>   
+                <input type="text" name="tag" id="izmena_tag"><br><br>
+                <input type="submit" value="Izmeni proizvod">
+            </form>
+            </div>
+    </div>
+
+    <script>
+        let radios=document.querySelectorAll(".proizvod_radio");
+        for(let x of radios){
+            x.addEventListener("click",()=>{
+             var url="http://localhost:3000/getProizvodById/"+x.getAttribute("value");
+
+             fetch(url,{
+                 method:'get',
+                 headers: {
+                     'Content-Type': 'application/json',
+                         }
+                  })
+             .then((response) => response.json())
+             .then((data) =>{
+                document.getElementById("izmena_id").setAttribute("value",data.id);
+                 document.getElementById("izmena_naziv").setAttribute("value",data.naziv);
+                 document.getElementById("izmena_kategorija").value=data.kategorija;
+                 document.getElementById("izmena_opis").value=data.opis;
+                 document.getElementById("izmena_cena").setAttribute("value",data.cena);
+                 document.getElementById("izmena_slika").setAttribute("value",data.slika);
+                 document.getElementById("izmena_tag").setAttribute("value",data.tag);
+             })
+             .catch((err)=>{
+                 console.error(err);
+             });
+            });
+    }
+     
+        
+    </script>
+</body>
+</html>
+
+
+<!--
+                 fetch(url,{
+                 method:'get',
+                 mode:"no-cors",
+                 headers: {
+                     'Content-Type': 'application/json',
+                         }
+                  })
+             .then((response) => response.json())
+             .then((data) =>{
+                document.getElementById("izmena_id").setAttribute("value",data.id);
+                 document.getElementById("izmena_naziv").setAttribute("value",data.naziv);
+                 document.getElementById("izmena_kategorija").value=data.kategorija;
+                 document.getElementById("izmena_opis").value=data.opis;
+                 document.getElementById("izmena_cena").setAttribute("value",data.cena);
+                 document.getElementById("izmena_slika").setAttribute("value",data.slika);
+                 document.getElementById("izmena_tag").setAttribute("value",data.tag);
+             })
+             .catch((err)=>{
+                 console.error(err);
+             })
+-->
