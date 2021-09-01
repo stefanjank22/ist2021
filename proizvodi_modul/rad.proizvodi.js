@@ -8,8 +8,11 @@ function citanjeIzFajla(){
 function upisUFajl(data){
     fs.writeFileSync(path,JSON.stringify(data));
 }
-
 exports.sviProizvodi=()=>{
+    return citanjeIzFajla();
+}
+
+exports.sviVidljiviProizvodi=()=>{
     let proizvodi=citanjeIzFajla();
     var proizvodiVisible=[];
     for(let proizvod of proizvodi){
@@ -27,12 +30,13 @@ exports.dodajProizvod=(proizvod)=>{
         id=proizvodi.length+1;
     }
     proizvod.id=id;
+    proizvod.visible=true;
     proizvodi.push(proizvod);
     upisUFajl(proizvodi);
 }
 
 exports.izbrisiProizvod=(id)=>{
-    let proizvodi=this.sviProizvodi();
+    let proizvodi=this.sviVidljiviProizvodi();
     for(let p of proizvodi){
         if(p.id==id){
             p.visible=false;
@@ -54,10 +58,18 @@ exports.izmeniProizvod=(data)=>{
     let proizvodi=citanjeIzFajla();
     for(let p of proizvodi){
         if(p.id==data.id){
-            p=data;
+            p.naziv=data.naziv;
+            p.cena=data.cena;
+            p.opis=data.opis;
+            p.slika=data.slika;
         }
     }
     upisUFajl(proizvodi);
 }
 
-console.log(this.getProizvod(2));
+exports.pretraziProizvode=(data)=>{
+    
+    for(let p of this.sviVidljiviProizvodi()){
+        p.naziv.toUpperCase().includes(data.toUpperCase());
+    }
+  }
