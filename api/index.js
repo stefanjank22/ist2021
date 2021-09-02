@@ -39,6 +39,5 @@ app.post('/izmeniProizvod',(req,res)=>{
 });
 
 app.get('/pretraga',(req,res) =>{
-    res.send( upravljanjeProizvodima.pretraziProizvode(req.query.pretraga));
-    res.end("200");
+    res.send(upravljanjeProizvodima.pretraziProizvode(req.query.pretraga));
 });

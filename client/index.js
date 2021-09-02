@@ -2,7 +2,6 @@ const { response } = require('express');
 const express=require('express');
 const fs=require('fs');
 const axios=require('axios');
-//const path=require('path');
 const app=express();
 
 app.listen(4000,()=>{
@@ -110,20 +109,17 @@ let prikazi = (data)=> {
     let proizvodi='';
     for( p of data){
          proizvodi+=`
-         <div class='proizvod'>
-            <img src="${p.slika}" alt="${p.naziv}">
-            <div class="proizvod_name">${p.naziv}</div>
-            <div class="proizvod_description">
-                ${p.opis}
-            </div>
-             <div class="proizvod_order">
-                <a href="#" class="order_button">Dodaj u <i class="fas fa-shopping-cart"></i></a>
-                <span class="proizvod_price">${p.cena} RSD</span>
-             </div>
-        </div>`;
+         <div class="card" style="width: 18rem; display:inline-block">
+         <img src="${p.slika}" class="card-img-top" alt="${p.naziv}">
+         <div class="card-body">
+           <h5 class="card-title">${p.naziv}</h5>
+           <p class="card-text">${p.opis}</p>
+           <p class="card-text">${p.cena} RSD</p>
+           <a href="#" class="btn btn-primary">Kupi</a>
+         </div>
+       </div>`;
     }
 
     const ress=procitajFajl('prikazProizvoda').replace("${data}",proizvodi);
     return ress;
 }
-

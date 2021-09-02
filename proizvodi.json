@@ -1,1 +1,72 @@
-[{"naziv":"test2","cena":"20","opis":"Opis","slika":"https://img.gigatron.rs/img/products/large/APPLE-iPhone-12-Mini-64GB-Blue-MGE13SE-A-(Plava)-72.png","tag":"akcija","id":5,"visible":false,"kategorija":"Mobilni uredjaji"},{"naziv":"iphone 12","kategorija":"Mobilni uredjaji","cena":"120000","opis":"Telefon","slika":"https://img.gigatron.rs/img/products/large/APPLE-iPhone-12-128GB-Black-(Crna)-99.png","tag":"akcija","id":2,"visible":true}]
+[
+    {
+        "naziv": "Iphone 12",
+        "kategorija": "Mobilni uredjaji",
+        "cena": "120000",
+        "opis": "Dijagonala ekrana:6.1\"\r\nRAM memorija:4 GB\r\nInterna memorija:128 GB\r\nPrednja kamera:12 Mpix\r\nKapacitet baterije:2815 mAH\r\nRezolucija:2532 x 1170",
+        "slika": "https://img.gigatron.rs/img/products/large/APPLE-iPhone-12-128GB-Black-(Crna)-99.png",
+        "tag": "akcija",
+        "id": 2,
+        "visible": true
+    },
+    {
+        "naziv": "Iphone 12 pro",
+        "kategorija": "Mobilni uredjaji",
+        "cena": "165000",
+        "opis": "Dijagonala ekrana:6.1\"\r\nRAM memorija:6 GB\r\nInterna memorija:128 GB\r\nPrednja kamera:12 Mpix\r\nKapacitet baterije:2815 mAH\r\nRezolucija:2532 x 1170",
+        "slika": "https://img.gigatron.rs/img/products/large/image5fad4c038b210.png",
+        "tag": "",
+        "id": 3,
+        "visible": true
+    },
+    {
+        "naziv": "Samsung Galaxy S21 Ultra",
+        "kategorija": "Mobilni uredjaji",
+        "cena": "152000",
+        "opis": "Dijagonala ekrana:6.8\"\r\nRAM memorija:12 GB\r\nInterna memorija:128 GB\r\nZadnja kamera:108 Mpix + 10 Mpix + 10 Mpix + 12 Mpix\r\nPrednja kamera:40 Mpix\r\nKapacitet baterije:5000 mAh",
+        "slika": "https://img.gigatron.rs/img/products/large/SAMSUNG-GALAXY-S21-Ultra-5G-128GB-Phantom-Silver-SM-G998BZSDEUC-(Srebrna)-15.png",
+        "tag": "",
+        "id": 4,
+        "visible": true
+    },
+    {
+        "naziv": "Samsung Galaxy S21 Plus",
+        "kategorija": "Mobilni uredjaji",
+        "cena": "129000",
+        "opis": "Dijagonala ekrana:6.7\"\r\nRAM memorija:8 GB\r\nInterna memorija:128 GB\r\nZadnja kamera:64 Mpix + 12 Mpix + 12 Mpix\r\nPrednja kamera:10.0 Mpix\r\nKapacitet baterije:4800 mAh",
+        "slika": "https://img.gigatron.rs/img/products/large/SAMSUNG-GALAXY-S21-Plus-5G-128GB-Phantom-Silver-SM-G996BZSDEUC-(Srebrna)-91.png",
+        "tag": "",
+        "id": 5,
+        "visible": true
+    },
+    {
+        "naziv": "Iphone 11",
+        "kategorija": "Mobilni uredjaji",
+        "cena": "90000",
+        "opis": "Dijagonala ekrana:6.1\"\r\nRAM memorija:4 GB\r\nInterna memorija:64 GB\r\nZadnja kamera:12.0 Mpix + 12.0 Mpix\r\nPrednja kamera:12 Mpix\r\nKapacitet baterije:3110 mAh",
+        "slika": "https://img.gigatron.rs/img/products/large/APPLE-iPhone-11-64GB-Black-MWLT2SE-A-(Crna)-.png",
+        "tag": "",
+        "id": 6,
+        "visible": true
+    },
+    {
+        "naziv": "Iphone 11 pro",
+        "kategorija": "Mobilni uredjaji",
+        "cena": "145000",
+        "opis": "Dijagonala ekrana:6.1\" RAM memorija:4 GB Interna memorija:64 GB Zadnja kamera:12.0 Mpix + 12.0 Mpix Prednja kamera:12 Mpix Kapacitet baterije:3110 mAh",
+        "slika": "https://img.gigatron.rs/img/products/large/image5ddbd788c8dd0.png",
+        "tag": "",
+        "id": 7,
+        "visible": true
+    },
+    {
+        "naziv": "",
+        "kategorija": "Laptop racunari",
+        "cena": "",
+        "opis": "Dijagonala ekrana:6.1\" RAM memorija:4 GB Interna memorija:64 GB Zadnja kamera:12.0 Mpix + 12.0 Mpix Prednja kamera:12 Mpix Kapacitet baterije:3110 mAh",
+        "slika": "",
+        "tag": "",
+        "id": 8,
+        "visible": false
+    }
+]

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <style>
         #prikazProizvoda{
             margin: 40px 0px;
@@ -43,11 +44,26 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/prikazProizvoda">Prikazi proizvode</a>
-        <a href="/dodajProizvode">Dodaj proizvode</a>
-        <a href="/izmeniProizvodeStr">Izmeni proizvode</a>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/prikazProizvoda">Prikazi proizvode</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/dodajProizvode">Dodaj proizvode</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/izmeniProizvodeStr">Izmeni proizvode</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
     <div id="prikazProizvoda">
         <div id="lista">
@@ -118,27 +134,3 @@
     </script>
 </body>
 </html>
-
-
-<!--
-                 fetch(url,{
-                 method:'get',
-                 mode:"no-cors",
-                 headers: {
-                     'Content-Type': 'application/json',
-                         }
-                  })
-             .then((response) => response.json())
-             .then((data) =>{
-                document.getElementById("izmena_id").setAttribute("value",data.id);
-                 document.getElementById("izmena_naziv").setAttribute("value",data.naziv);
-                 document.getElementById("izmena_kategorija").value=data.kategorija;
-                 document.getElementById("izmena_opis").value=data.opis;
-                 document.getElementById("izmena_cena").setAttribute("value",data.cena);
-                 document.getElementById("izmena_slika").setAttribute("value",data.slika);
-                 document.getElementById("izmena_tag").setAttribute("value",data.tag);
-             })
-             .catch((err)=>{
-                 console.error(err);
-             })
--->

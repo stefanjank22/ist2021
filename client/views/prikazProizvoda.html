@@ -2,109 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        #layout{
-    display:flex;
-   }
-   .proizvod{
-       display: grid;
-       grid-template: "img img img"
-                        "name name name"
-                        "desc desc desc"
-                        "order order order";
-
-    width: 13vw;
-    height: auto;
-    padding: 10px;
-    border: 1px solid black;
-    margin: 0px 10px;
-    border-radius: 20px;
-   }
-
-   .proizvod img{
-       grid-area: img;
-       width: 100%;
-       height: 100%;
-       
-       transition: 300ms;
-       border:1px solid transparent;
-   }
-   .proizvod img:hover{
-       border:1px solid black;
-       border-radius: 50%;
-       transition: 500ms;
-   }
-   .proizvod_name{
-       grid-area: name;
-       text-align: center;
-       border-bottom: 1px solid gray;
-       margin-bottom: 20px;
-       font-weight: bold;
-       letter-spacing: 1px;
-   }
-
-   .proizvod_description{
-       grid-area: desc;
-       border-bottom: 1px solid black;
-       padding-bottom: 10px;
-       width: 100%;
-       height: 120px;
-   }
-
-   .proizvod_order{
-       grid-area: order;
-       margin: 10px 0px;
-       display: flex;
-       justify-content: space-around;
-   }
-
-   .order_button{
-       padding: 10px;
-       border-radius: 10px;
-       background-color: red;
-       text-decoration: none;
-       color:white;
-       border:1px solid red;
-       transition: 300ms;
-   }
-   .order_button:hover{
-       background-color: white;
-       border:1px solid red;
-       color:red;
-       transition: 500ms;
-   }
-
-   .proizvod_price{
-       align-self: center;
-       font-weight: bold;
-   }
-
-   #filters{
-       border-bottom: 1px solid gray;
-       margin-bottom: 40px;
-       padding-bottom: 20px;
-   }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 <body>
-    <nav>
-        <a href="/prikazProizvoda">Prikazi proizvode</a>
-        <a href="/dodajProizvode">Dodaj proizvode</a>
-        <a href="/izmeniProizvodeStr">Izmeni proizvode</a>
-    </nav>
-    <br><br><br>
-    <div id="filters">
-        <form action="/pretraga">
-        <input type="text" name="pretraga" placeholder="pretraga">
-        <input type="submit" value="Pretrazi">
-        </form>
-    </div>
-    <div id="layout">
-        ${data}        
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/prikazProizvoda">Prikazi proizvode</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/dodajProizvode">Dodaj proizvode</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/izmeniProizvodeStr">Izmeni proizvode</a>
+              </li>
+            </ul>
+            <form class="d-flex" action="/pretraga">
+                <input class="form-control me-2" type="search" name="pretraga" placeholder="pretraga" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Pretrazi</button>
+              </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="card-desk">
+            ${data}
+          </div>
+        
+      </div>
 
     <script src="https://kit.fontawesome.com/2ed7fe8ffc.js" crossorigin="anonymous"></script>
 </body>
